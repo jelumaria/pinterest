@@ -1,0 +1,325 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.2);
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+
+}
+
+.logo{
+    margin-left: 20px;
+    font-size: 32px;
+    color: rgb(211, 6, 6);
+}
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.links a{
+    color: black;
+    text-decoration: none;
+    margin:0 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+}
+
+.search{
+   width:700px ; 
+   height: 55px;
+   background: #e4e4e4;
+   border-radius: 80px;
+   padding: 0 20px;
+
+}
+
+.serach i {
+    color: #555;
+
+}
+.search input{
+    border: none;
+    background: transparent;
+    width: 80%;
+    height: 100%;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   
+}
+
+.icons i{
+    font-size: 26px;
+    color: #333;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.custom-badge {
+    font-size: 0.7rem !important; /* Force a smaller font size */
+    width: 20px !important; /* Adjust width */
+    height: 15px !important; /* Adjust height */
+    padding: 2px !important; /* Adjust padding */
+    display: flex; /* Center content */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    line-height: 1 !important; /* Make line height compact */
+  }
+  
+  
+
+  
+.wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.wrapper i{
+    font-size: 180px;
+    color: rgb(211, 6, 6);
+
+}
+
+.pin-container{
+    width: 1200px;
+    padding-top: 120px; /* Add padding-top to account for the fixed header's height */
+    columns: 4;
+    column-gap: 10px;
+}
+
+.pin-container .box{
+    width: 100%;
+    margin: 0 0 0px;
+    padding: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+.box h5{
+    padding-top: 5px;
+    font-size: 1.1rem;
+}
+
+
+
+.box {
+    position: relative; 
+    display: inline-block; 
+    overflow: hidden;
+
+   
+}
+
+.box img {
+    position: relative; 
+    display: block; /* Remove bottom space/gap */
+    width: 100%; /* Ensure the image covers the box */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.button {
+    background-color: red;
+    position: absolute;
+    color: white;
+    width: 60px; 
+    border: none;
+    align-items: center;
+    text-align: center;
+    top: 5px; 
+    right: 5px; 
+    margin: 15px;
+    height: 40px;
+    padding: 10px; 
+    border-radius: 50px;
+    z-index: 1; /* Make sure the button appears above the image */
+    display: none;
+}
+
+.image-bottom-icons {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    z-index: 2;
+    display: none;
+}
+
+.image-bottom-icons i {
+    background-color: white;
+    text-align: center;
+    height: 30px;
+    border-radius: 50%;
+    padding-top: 5px;
+    width: 30px;
+    margin-left: 15px;
+    font-size: 18px;
+    color: rgb(0, 0, 0); /* Change icon color to white to be visible on the image */
+    cursor: pointer;
+   
+}
+
+.box:hover .button,
+.box:hover .image-bottom-icons {
+    display: block; /* Show the button and icons on hover */
+}
+
+/* Add opacity effect on image hover */
+.box:hover img {
+    opacity: 0.6; /* Dim the image on hover */
+}
+
+
+.profile-img {
+    display: flex;
+    align-items: center; /* Vertically center the image and text */
+}
+
+.profile-img img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Add space between the image and the text */
+}
+
+.profile-img p {
+    margin: 0; /* Remove default margin from the paragraph */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
+.header-icons{
+    display: none;
+}
+@media (max-width:1200px){
+    .header {
+        flex-direction: row; 
+        height: auto; /* Allow height to adjust */
+    }
+    .links {
+        margin-top: 10px;
+    }
+    .search {
+        max-width: 100%; /* Allow full width on smaller screens */
+        margin-top: 10px;
+    }
+    .pin-container{
+        columns: 3;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+        padding: 20px 20px 20px 0;
+
+    }
+    .header-icons{
+        display: none;
+    }
+
+    .image-bottom-icons{
+        display: flex;
+        flex-direction: row;
+        display: none;
+    }
+    .box:hover .image-bottom-icons {
+        display: block; /* Show the button and icons on hover */
+    }
+
+}
+
+
+@media (max-width:768px){
+    .header {
+        flex-direction: row; /* Stack items vertically */
+        height: auto; /* Allow height to adjust */
+    }
+    .search {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+    .links {
+        margin-top: 10px;
+    }
+    .pin-container{
+        columns: 2;
+        
+
+    }
+    .header-icons{
+        display: none;
+    }
+
+    
+}
+
+@media (max-width: 480px){
+    
+    .header{
+        top: 0;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+    
+
+    .logo {
+        font-size: 24px; 
+        padding-left: 50%;
+    }
+
+    .header-icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0px -2px 5px rgba(0,0,0,0.2);
+    }
+
+    .header-icons i {
+        font-size: 24px; /* Adjust icon size */
+        color: #333;
+        margin: 0 10px;
+    }
+
+    .header .links,
+    .header .search,
+    .header .icons {
+        display: none; /* Hide these elements */
+    }
+
+    .header .logo {
+        display: block;
+    }
+    .pin-container{
+        columns: 1;
+        margin: 20px;
+        
+
+    }
+}
